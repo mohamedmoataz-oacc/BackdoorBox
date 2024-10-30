@@ -27,10 +27,11 @@ transform_train = Compose([
 trainset = dataset(
     root='./data/cifar10/train',
     loader=cv2.imread,
-    extensions=('png',),
+    extensions=('jpg',),
     transform=transform_train,
     target_transform=None,
-    is_valid_file=None)
+    is_valid_file=None
+)
 
 transform_test = Compose([
     ToTensor()
@@ -38,10 +39,11 @@ transform_test = Compose([
 testset = dataset(
     root='./data/cifar10/test',
     loader=cv2.imread,
-    extensions=('png',),
+    extensions=('jpg',),
     transform=transform_train,
     target_transform=None,
-    is_valid_file=None)
+    is_valid_file=None
+)
 
 index = 44
 
@@ -68,7 +70,7 @@ badnets = core.BadNets(
     poisoned_rate=0.05,
     pattern=pattern,
     weight=weight,
-    poisoned_transform_index=0,
+    # poisoned_transform_index=0,
     poisoned_target_transform_index=0,
     schedule=None,
     seed=666
@@ -113,7 +115,7 @@ schedule = {
     'save_epoch_interval': 10,
 
     'save_dir': 'experiments',
-    'experiment_name': 'train_benign_DatasetFolder-CIFAR10'
+    'experiment_name': 'train_benign_CIFAR10'
 }
 
 badnets.train(schedule)

@@ -4,14 +4,14 @@ __pycache__/
 *$py.class
 
 # data
-data/
+# data/
 adv_dataset_old/
 
 # experiments
 experiments/
 
 # personal test code
-*data*/
+# *data*/
 *experiments*/
 tests/model/
 mytest/
